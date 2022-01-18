@@ -62,11 +62,24 @@ for(let i=0; i < xx.length; i++){
 let card = {
     name: '郭俊良',
     tel: '0921560420',
-    addr: '台南市中西區西門路一段20號'
+    addr: '台南市中西區西門路一段20號',
+    '職稱': '工程師'
 };
-console.log(card.name);
-console.log(card.tel);
-console.log(card.addr);
+// console.log(card.name);
+// console.log(card.tel);
+// console.log(card.addr);
 
-let y = 'name';
-console.log(card[y]);
+let y = '職稱';
+// console.log(card[y]);
+// console.log(card.職稱)
+
+let zz = 123;
+let yy = zz;
+yy = 456;
+// console.log(zz);
+
+let card1 = card;
+card1.name = '456';
+// console.log(card1);
+
+console.log(card.name);
