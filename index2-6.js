@@ -32,4 +32,9 @@ for(let i=0; i < arr.length; i++ ){
 let radius = 5;
 // let area = radius * radius * 3.14159;
 let area = radius ** 2 * 3.14159;
-console.log(area);
+// console.log(area);
+
+let myName = '郭俊良';
+let age = 25;
+
+console.log(myName + ': ' + age + ' 歲');
