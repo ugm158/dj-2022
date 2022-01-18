@@ -42,5 +42,22 @@ let age = 25;
 // 四、比較運算子：==、!=、<、<=、>、>=、===、!==
 let x = 5;
 let y = '5';
-console.log(!(x == y));
-console.log(!(x === y));
+// console.log(!(x == y));
+// console.log(!(x === y));
+
+// 五、邏輯運算子：&&、||、!
+// && 且 、 || 或 、 ! 反向
+// console.log( true && true)
+// console.log( false && true)
+// console.log( true && false)
+// console.log( false && false)
+
+// console.log( !(false || false))
+// console.log( true || false)
+// console.log( false || true)
+// console.log( true || true)
+
+// 六、條件運算子：?:
+let score = 100;
+let show = (score >= 60) ? '分數及格' : '分數不及格';
+console.log(score,show);
