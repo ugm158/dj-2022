@@ -37,4 +37,10 @@ let area = radius ** 2 * 3.14159;
 let myName = '郭俊良';
 let age = 25;
 
-console.log(myName + ': ' + age + ' 歲');
+// console.log(myName + ': ' + age + ' 歲');
+
+// 四、比較運算子：==、!=、<、<=、>、>=、===、!==
+let x = 5;
+let y = '5';
+console.log(!(x == y));
+console.log(!(x === y));
