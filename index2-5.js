@@ -16,10 +16,30 @@ let s6 = `您的
 國文
 分數為 ${s4}`;
 
-console.log(s6);
+// console.log(s6);
 
 let s5 = '您的\n';
 s5 += '國文\n';
 s5 += '分數為' + s4;
 
-console.log(s5);
+// console.log(s5);
+
+// boolean
+// console.log(10 > 5);
+// console.log(10 < 5);
+// console.log(1);
+
+// undefined
+let u;
+// console.log(u);
+
+let u1 = {};
+// console.log(u1.name);
+
+let u2 = function(x,y){
+    return x+y;
+}
+// console.log(u2(3,4));
+
+let nu1 = null;
+console.log(nu1);
