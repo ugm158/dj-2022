@@ -67,3 +67,6 @@ let card = {
 console.log(card.name);
 console.log(card.tel);
 console.log(card.addr);
+
+let y = 'name';
+console.log(card[y]);
