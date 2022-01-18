@@ -12,6 +12,14 @@ let s2 = 'abc';
 let s3 = '國文:80';
 
 let s4 = 80;
-let s5 = `您的國文分數為 ${S}`
+let s6 = `您的
+國文
+分數為 ${s4}`;
 
-console.log(s3);
+console.log(s6);
+
+let s5 = '您的\n';
+s5 += '國文\n';
+s5 += '分數為' + s4;
+
+console.log(s5);
