@@ -58,6 +58,6 @@ let y = '5';
 // console.log( true || true)
 
 // 六、條件運算子：?:
-let score = 100;
+let score = 59;
 let show = (score >= 60) ? '分數及格' : '分數不及格';
 console.log(score,show);
