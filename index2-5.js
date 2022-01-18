@@ -73,13 +73,15 @@ let y = '職稱';
 // console.log(card[y]);
 // console.log(card.職稱)
 
+// 傳值
 let zz = 123;
 let yy = zz;
 yy = 456;
 // console.log(zz);
 
+// 傳址
 let card1 = card;
 card1.name = '456';
-// console.log(card1);
+console.log(card1);
 
 console.log(card.name);
