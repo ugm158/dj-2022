@@ -51,7 +51,7 @@ let x4 = 40;
 let x5 = 90;
 // console.log(x1);
 //        0   1    2   3   4
-let xx = [59, 100, 80, 40, 90];
+let xx = [59, 89, 100, 80, 40, 90];
 // index value
 // console.log(xx[1])
 
@@ -63,8 +63,12 @@ let card = {
     name: '郭俊良',
     tel: '0921560420',
     addr: '台南市中西區西門路一段20號',
-    '職稱': '工程師'
+    '職稱': '工程師',
+    getNname: function(){
+        console.log(this.name);
+    }
 };
+card.getNname();
 // console.log(card.name);
 // console.log(card.tel);
 // console.log(card.addr);
@@ -82,6 +86,6 @@ yy = 456;
 // 傳址
 let card1 = card;
 card1.name = '456';
-console.log(card1);
+// console.log(card1);
 
-console.log(card.name);
+// console.log(card.name);
