@@ -5,8 +5,12 @@ let card = {
     addr: '台南市中西區西門路一段20號',
     '職稱': '工程師'
 };
-console.log();
 
-// for(let i in card){
-//     console.log(i);
-// }
+// let x = 'name';
+// console.log(card[x]);
+
+for(let i in card){
+    // console.log(i);
+    // console.log(typeof i);
+    console.log(card[i])
+}
