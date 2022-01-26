@@ -15,7 +15,6 @@ class Sheet{
 
     // 取得標題
     static getHead(sheet){
-      let ss = this.getSs();//取得試算表
       let ws = this.getWs(sheet);// 取得工作表
       return ws.getSheetValues(1, 1, 1, ws.getLastColumn())[0];
     }
