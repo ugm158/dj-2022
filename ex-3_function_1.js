@@ -54,4 +54,11 @@ class Sheet{
         ws.setName(sheet);
       }
     }
+
+    //設定標題列
+    static setHead(sheet,row){
+      for(let i in row){
+        Sheet.setCellData(sheet, 1, parseInt(i) + 1, row[i]);
+      }
+    }
   }
