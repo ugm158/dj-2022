@@ -46,12 +46,12 @@ function get_global() {
     // 寫試算表
     Sheet.setCellData('全域變數', 1, 2, e.parameter['網站標題']);
 
-    // message_show子樣板
-    let content = Sheet.render('message_show', {global: global, title: '執行成功', message: '已寫入工作表', bg: 'bg-primary'});
 
     // 重新撈資料
     global = get_global();
     menu = Sheet.render('menu', {global: global});
+    // message_show子樣板
+    let content = Sheet.render('message_show', {global: global, title: '執行成功', message: '已寫入工作表', bg: 'bg-primary'});
 
 
     // 主樣板
