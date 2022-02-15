@@ -1,0 +1,16 @@
+<h1 class='mt-3 text-center'>商品類別管理</h1>
+<form action="<?!= global['url'] ?>" id="myForm" class="" method="GET">
+  <div class="row">
+    <div class="col-sm-12 mb-3">
+      <div class="form-group">
+        <label>商品類別<span class="text-danger"> *</span></label>
+        <input type="text" class="form-control" name="商品類別" id="商品類別" value="">
+      </div>
+    </div>
+
+    <div class="col-sm-12 d-grid">
+      <input type='hidden' name='op' value="set_prod_kind">
+      <button id="submit" type="submit" class="btn btn-primary">送出</button>
+    </div>
+  </div>
+</form>
