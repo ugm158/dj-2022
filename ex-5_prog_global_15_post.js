@@ -35,29 +35,6 @@ function get_global() {
   /*=====================================
     全域變數 寫入
     { parameter: { web_title: '德鍵', op: 'set_global' },
-    postData:
-     { toString: [Function],
-       getName: [Function],
-       getBytes: [Function],
-       setName: [Function],
-       getContentType: [Function],
-       setContentType: [Function],
-       setBytes: [Function],
-       getDataAsString: [Function],
-       setDataFromString: [Function],
-       isGoogleType: [Function],
-       getAllBlobs: [Function],
-       setContentTypeFromExtension: [Function],
-       copyBlob: [Function],
-       getAs: [Function],
-       contents: 'web_title=%E5%BE%B7%E9%8D%B5',
-       length: 28,
-       name: 'postData',
-       type: 'application/x-www-form-urlencoded' },
-    queryString: 'op=set_global',
-    contextPath: '',
-    parameters: { web_title: [ '德鍵' ], op: [ 'set_global' ] },
-    contentLength: 28 }
   =====================================*/
   function set_global(e){
     // 取得全域變數
@@ -66,10 +43,16 @@ function get_global() {
     // menu子樣板
     let menu = Sheet.render('menu', {global: global});
 
+    // 寫試算表
+    Sheet.setCellData('全域變數', 1, 2, e.parameter['網站標題']);
 
+    // message_show子樣板
+    let content = Sheet.render('message_show', {global: global, title: '執行成功', message: '已寫入工作表', bg: 'bg-primary'});
 
+    // 重新撈資料
+    global = get_global();
+    menu = Sheet.render('menu', {global: global});
 
-    let content = e.parameter['網站標題'];
 
     // 主樣板
     return Sheet.render('index', {content: content, menu: menu}, global['網站標題']);
