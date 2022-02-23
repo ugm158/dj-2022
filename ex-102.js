@@ -144,15 +144,14 @@ function ex(e) {
     /**
      [ '簡答', '段落', '下拉選單', '日期時間', '日期', '時間', '複選', '網頁編輯器', '隱藏' ]
      */
-    // 陣列 轉 字串 join()
 
-    // 字串 轉 陣列 split()
+  // 陣列 轉 字串 join()
+  let s = title.join(',');
+  console.log(s);
 
-    let s = title.join(',');
-    console.log(s);
-
-    let array = s.split(',');
-    console.log(array);
+  // 字串 轉 陣列 split()
+  let array = s.split(',');
+  console.log(array);
 
 
 
