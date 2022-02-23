@@ -1,0 +1,130 @@
+
+<!-- 調用 WdatePicker.js-->
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/my97datepicker@4.8.0/skin/WdatePicker.css'>
+<script src='https://cdn.jsdelivr.net/npm/my97datepicker@4.8.0/WdatePicker.js'></script>
+<!-- ckeditor -->
+<script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+
+<h2 class="text-center mt-3">表單類別</h2>
+<form action="<?!= global.url ?>" id="myForm" class="mb-5" method="POST">
+  <div class="row">
+
+    <div class="col-sm-3 mb-3">
+      <label>簡答<span class="text-danger"> *</span></label>
+      <input type="text" class="form-control" name="col_1" id="col_1" value="<?= row[0] ?>" >
+    </div>
+
+    <div class="col-sm-12 mb-3">
+        <label>段落<span class="text-danger"> *</span></label>
+        <textarea class="form-control" name="col_2" id="col_2" rows="3"><?= row[1] ?></textarea>
+    </div>
+
+    <div class="col-sm-2 mb-3">
+      <label class="control-label">下拉選單</label>
+      <select name="col_3" id="col_3" class="form-select">
+        <? let option = stru[2]['option'].split(','); ?>
+        <? for(let i in option){ ?>
+          <option
+            <? if(option[i] == row[2]){ ?>
+              selected
+            <? } ?>
+          ><?= option[i] ?></option>
+        <? } ?>
+      </select>
+    </div>
+    <!--
+      console.log(stru[2]['option']);
+      // stru[2]['option'] = '選項1,選項2,選項3';
+      console.log(stru[2]['option'].split());
+      // [ '選項1,選項2,選項3' ]
+      console.log(row[2]);
+      //選項2
+     -->
+
+    <div class="col-sm-2 mb-3">
+      <label>日期時間</label>
+      <input type="text" class="form-control" name="col_4" id="col_4" value="<?= row[3] ?>" onclick="WdatePicker({dateFmt:'yyyy/MM/dd HH:mm:ss', startDate:' %y/%M/%d %H:%m:%s'})"  autocomplete="off">
+    </div>
+
+    <div class="col-sm-2 mb-3">
+      <label>日期</label>
+      <input type="text" class="form-control" name="col_5" id="col_5" value="<?= row[4] ?>" onclick="WdatePicker({dateFmt:'yyyy/MM/dd', startDate:' %y/%M/%d %H:%m:%s'})" autocomplete="off">
+    </div>
+
+    <div class="col-sm-2 mb-3">
+      <label>時間</label>
+      <input type="text" class="form-control" name="col_6" id="col_6" value="<?= row[5] ?>" onclick="WdatePicker({dateFmt:'HH:mm:ss', startDate:' %y/%M/%d %H:%m:%s'})" autocomplete="off">
+    </div>
+
+    <div class="col-sm-12 mb-3">
+
+      <label class="form-label d-grid">複選</label>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="col_7_1" value="option1" name='col_7[]' >
+        <label class="form-check-label" for="col_7_1">選項1</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="col_7_2" value="option2" name='col_7[]' checked>
+        <label class="form-check-label" for="col_7_2">選項2</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="col_7_3" value="option3" name='col_7[]'>
+        <label class="form-check-label" for="col_7_3">選項3</label>
+      </div>
+
+    </div>
+
+    <div class="col-sm-12 mb-3">
+      <label>網頁編輯器</label>
+      <textarea class="form-control" name="col_8" id="col_8" rows="3"><?= row[7] ?></textarea>
+    </div>
+    <!-- ckeditor start-->
+    <script>
+      CKEDITOR.replace('col_8');
+      CKEDITOR.config.allowedContent=true;
+    </script>
+    <!-- ckeditor end-->
+
+    <div class="col-sm-12 d-grid">
+
+      <input type="hidden" name="sn" id="sn" value="<?= row[8] ?>" >
+      <input type="hidden" name="op" id="op" value="set_form" >
+      <button id="submit" type="submit" class="btn btn-primary btn-block">送出</button>
+    </div>
+  </div>
+</form>
+
+<!-- 表單驗證 start -->
+<style>
+  .error{
+  color:red;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script>
+  $(function(){
+
+    $("#myForm").validate({
+      submitHandler: function(form) {//驗證成功執行
+        //insertData();
+        form.submit();
+        return false;
+      },
+      rules: {//驗證規則
+        'col_1': {required: true }
+      },
+      messages: {//驗證訊息
+        'col_1': {required: '必填' }
+      }
+    });
+
+  });
+
+  function insertData(){
+    console.log("end");
+  }
+</script>
+<!-- 表單驗證 end -->
